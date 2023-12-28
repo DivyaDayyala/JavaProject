@@ -25,3 +25,4 @@ public class TutorialManagementSystemApplication {
 		SpringApplication.run(TutorialManagementSystemApplication.class, args);
 	}
 }
+

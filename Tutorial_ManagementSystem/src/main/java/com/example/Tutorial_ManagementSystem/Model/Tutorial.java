@@ -17,9 +17,12 @@ public class Tutorial {
     private int id;
 	@Column(nullable = false)
     private String name;
+	
 	@Column(unique = true)
     private String email;
-    private int age;
+	
+    
+    
     private boolean active;
     
     
@@ -41,24 +44,19 @@ public class Tutorial {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
+	
 	public boolean isActive() {
 		return active;
 	}
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	public Tutorial(int id, String name, String email, int age, boolean active) {
+	public Tutorial(int id, String name, String email, boolean active) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		this.age = age;
+		
 		this.active = active;
 	}
 	public Tutorial() {

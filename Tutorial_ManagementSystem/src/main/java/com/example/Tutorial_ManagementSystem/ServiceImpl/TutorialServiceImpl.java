@@ -28,7 +28,7 @@ public class TutorialServiceImpl implements TutorialServices {
 
 		return tutorialObj;
 	}
-
+	
 	@Override
 	public String updateTutorial(int id,Tutorial updatedValue) {
 		Optional<Tutorial> tutorialObj = tutorialRepo.findById(id);
@@ -48,9 +48,7 @@ public class TutorialServiceImpl implements TutorialServices {
 
 	    }
 		
-	}
-
-	
+	}	
 
 	@Override
 	public Optional<Tutorial> getTutorialById(int id) {

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.Tutorial_ManagementSystem.Model.Tutorial;
 import com.example.Tutorial_ManagementSystem.ServiceImpl.TutorialServiceImpl;
 
+@CrossOrigin(origins="http://localhost:4200")
 @RestController //controller + response body , accepts request , returns respon 
 @RequestMapping("/tutorial.com")
 public class TutorialController {
@@ -30,11 +32,11 @@ public class TutorialController {
 		Tutorial tutorialObj=tutorialImpl.addTutorial(tutorial);
 		return tutorialObj;
 	}
-	
+
 	@GetMapping("readById/{id}")
 	//@ResponseBody
-	public Optional<Tutorial> getByTutorialId(@PathVariable int id) 
-	{
+	public Optional<Tutorial> getByTutorialId(@PathVariable int  id) 
+	{	
 		Optional<Tutorial> tutorialObj = tutorialImpl.getTutorialById(id);
 		return tutorialObj;
 	}
@@ -55,10 +57,10 @@ public class TutorialController {
 	}
 	
 	@DeleteMapping("/deleteTutorial/{id}")
-	public   String deleteTutorialById(@PathVariable int id)
+	public   void deleteTutorialById(@PathVariable int id)
 	{
 		String tutorialObj = tutorialImpl.removeTutorialById(id);
-		return "deleted";
+		System.out.println("deleted");
 	}
 	
 	@DeleteMapping("/deleteAllTutorial")
